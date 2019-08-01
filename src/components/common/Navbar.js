@@ -16,7 +16,10 @@ class Navbar extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to= "/" className="navbar-item"> Home </Link>
-            <Link to= "/cocktails" className="navbar-item"> Cocktails</Link>
+
+            <Link to= "/rum" className="navbar-item"> Rum</Link>
+            <Link to= "/vodka" className="navbar-item"> Vodka</Link>
+            <Link to= "/gin" className="navbar-item" > Gin</Link>
           </div>
         </div>
       </nav>
