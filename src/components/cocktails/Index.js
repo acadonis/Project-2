@@ -16,14 +16,12 @@ class CocktailsIndex extends React.Component {
   componentDidMount(){
     axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + this.props.match.params.spirit)
       .then(res => this.setState({ cocktails: res.data.drinks }))
-
-
   }
 
 
   render(){
     console.log(this.state)
-    if(!this.state.cocktails) return <h2>Loading...</h2>
+    if(!this.state.cocktails) return <h2>No result found. Return <Link to="/">home </Link> </h2>
     return(
       <section className="section">
         <div className="container">

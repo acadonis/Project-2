@@ -10,11 +10,10 @@ class VodkaIndex extends React.Component {
     this.state = {
       cocktails: [ ],
       searchTerm: ''
+
     }
     this.handleKeyUp = this.handleKeyUp.bind(this)
-
   }
-
 
   componentDidMount(){
     axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka')
@@ -23,7 +22,6 @@ class VodkaIndex extends React.Component {
 
   handleKeyUp(e){
     this.setState({ searchTerm: e.target.value})
-
   }
 
 
