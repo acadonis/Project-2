@@ -7,7 +7,7 @@ import {Link, withRouter } from 'react-router-dom'
 class Navbar extends React.Component {
   constructor(){
     super()
-    this.state = { wines: {} }
+    this.state = { cocktails: {} }
   }
 
   render(){
