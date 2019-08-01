@@ -45,7 +45,7 @@ class VodkaIndex extends React.Component {
       <section className="section">
         <div className="container">
           <div className="field">
-            <input placeholder="search" className="input" onKeyUp={this.handleKeyUp}/>
+            <input placeholder="Search your favourite drink" className="input" onKeyUp={this.handleKeyUp}/>
           </div>
           <div className="columns is-multiline">
             {this.filterCocktails().map(cocktail =>

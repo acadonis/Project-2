@@ -18,7 +18,7 @@ class GinIndex extends React.Component {
     this.setState({ searchTerm: e.target.value})
 
   }
-  
+
   componentDidMount(){
     axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin')
       .then(res => this.setState({ cocktails: res.data.drinks }))
@@ -42,7 +42,7 @@ class GinIndex extends React.Component {
       <section className="section">
         <div className="container">
           <div className="field">
-            <input placeholder="search" className="input" onKeyUp={this.handleKeyUp}/>
+            <input placeholder="Search your favourite drink" className="input" onKeyUp={this.handleKeyUp}/>
           </div>
           <div className="columns is-multiline">
             {this.filterCocktails().map(cocktail =>

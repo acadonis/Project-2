@@ -16,6 +16,8 @@ class CocktailsIndex extends React.Component {
   componentDidMount(){
     axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + this.props.match.params.spirit)
       .then(res => this.setState({ cocktails: res.data.drinks }))
+
+
   }
 
 
