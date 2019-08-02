@@ -74,15 +74,11 @@ class Home extends React.Component {
           in reprehenderit in voluptate velit esse.Lorem ipsum dolor sit
           amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-          in reprehenderit in voluptate velit esse.
+          enim ad minim veniam.
               </p>
             </div>
           </div>
         </section>
-
-
         <div className="container">
           <div className= "columns is-multiline is-centered">
             <div className="column is-one-third-desktop is-one-half-tablet">
@@ -101,7 +97,7 @@ class Home extends React.Component {
         <footer className="footer">
           <div className="content has-text-centered">
             <p>
-              <strong>CocktailBored</strong> by <a href="https://jgthms.com">Alexis and Shola</a>
+              <strong>CocktailBored</strong> by <a href="https://jgthms.com">Alexis </a> and <a href="https://github.com/Iamshola">  Shola </a>
             </p>
           </div>
         </footer>
