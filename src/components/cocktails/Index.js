@@ -8,15 +8,32 @@ class CocktailsIndex extends React.Component {
   constructor(){
     super()
     this.state = {
-      cocktails: []
+      cocktails: [],
+      searchTerm: ''
     }
-
+    this.handleKeyUp = this.handleKeyUp.bind(this)
   }
 
   componentDidMount(){
     axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + this.props.match.params.spirit)
       .then(res => this.setState({ cocktails: res.data.drinks }))
   }
+
+  handleKeyUp(e){
+    this.setState({ searchTerm: e.target.value})
+  }
+
+
+  filterCocktails(){
+    const re = new RegExp(this.state.searchTerm, 'i')
+
+    const filterCocktails = _.filter(this.state.cocktails, cocktail => {
+      return re.test(cocktail.strDrink)
+    })
+
+    return filterCocktails
+  }
+
 
 
   render(){
@@ -29,7 +46,7 @@ class CocktailsIndex extends React.Component {
             <input placeholder="search" className="input" onKeyUp={this.handleKeyUp}/>
           </div>
           <div className="columns is-multiline">
-            {this.state.cocktails.map(cocktail =>
+            {this.filterCocktails().map(cocktail =>
               <div className="column is-half-tablet is-one-quarter-desktop"
                 key={cocktail.idDrink}
               >
