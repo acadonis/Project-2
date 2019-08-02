@@ -9,14 +9,20 @@ class GinIndex extends React.Component {
     super()
     this.state = {
       cocktails: [],
-      searchTerm: ''
+      searchTerm: '',
+      sortTerm: 'name|asc'
     }
     this.handleKeyUp = this.handleKeyUp.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.filterCocktails = this.filterCocktails.bind(this)
   }
 
   handleKeyUp(e){
     this.setState({ searchTerm: e.target.value})
 
+  }
+  handleChange(e){
+    this.setState({ sortTerm: e.target.value})
   }
 
   componentDidMount(){

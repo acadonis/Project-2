@@ -9,10 +9,13 @@ class VodkaIndex extends React.Component {
     super()
     this.state = {
       cocktails: [ ],
-      searchTerm: ''
+      searchTerm: '',
+      sortTerm: 'name|asc'
 
     }
     this.handleKeyUp = this.handleKeyUp.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.filterCocktails = this.filterCocktails.bind(this)
   }
 
   componentDidMount(){
@@ -23,7 +26,9 @@ class VodkaIndex extends React.Component {
   handleKeyUp(e){
     this.setState({ searchTerm: e.target.value})
   }
-
+  handleChange(e){
+    this.setState({ sortTerm: e.target.value})
+  }
 
   filterCocktails(){
     const re = new RegExp(this.state.searchTerm, 'i')
