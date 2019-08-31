@@ -31,19 +31,21 @@ React, axios, Insomnia, Bulma, HTML5, ES6, CSS 3, SASS, Git, Github
 
 Our first decision was to agree on pair-programming the app, given the limited two day window and need to work closely together to agree functionality and design elements.
 
-The our next stage involved setting up a Trello board with key tasks, followed by a UX wireframing session to work through and agree the design of the app.
+We then reviewed the available public APIs that had information on cocktails available. After reviewing that it would fit with our ingredients led approach, we chose [TheCocktailDB](https://www.thecocktaildb.com/) due to it's large number of cocktails easily searchable by ingredients.
+
+Our next stage involved setting up a Trello board with key tasks, followed by a UX wireframing session to work through and agree the design of the app.
 
 We quickly realised that the best design, given the purpose of the app to allow the user to search by ingredients, was an eyecatching homepage with a single search functionality (by ingredient). 
 
 This would then lead the user to an index page where they would either have the option to browse the results of this initial search, or refine it further, before a final show page with information on their cocktail of choice.
 
-![CocktailBored wireframe](./readme/wireframe.jpg)
+<img src="./readme/wireframe.jpg" width="50%" alt="CocktailBored wireframe">
 
 With the design agreed, we moved onto the technical implementation of the project. 
 
 Our underlying soltuion used axios to handle our requests, and the React setState method to render the DOM. Using a React component based structure, with both classical and functional components, allowed us to reuse components such as the Navbar where possible, and minimise duplication of code. 
 
-Using react-router allowed for a clearly structured app.js, with the url paths allowing navigation by way of the unique ingredient names or drink ids drawn from the API.  
+Using react-router allowed for a clearly structured app.js, with the url paths allowing navigation by way of the unique ingredient names or drink ids drawn from the API. For example, the ingredients search routing from the main page follows the below routing:
 
 ```javascript
 <HashRouter>
@@ -63,12 +65,39 @@ componentDidMount(){
       .then(res => this.setState({ cocktail: res.data.drinks }))
 }
 ```
+The search and filtering function was the key functional aspect of the app, and as such the code behind this is paramount. Forming two parts, the first search on the homepage narrows down the results fetched from the API by the "strIngredient" property as above, with further filtering on the results page by name of cocktail using RegEx and the Lodash library ```javascript _.filter ``` and / or alphabetical sorting using ```javascript _.orderBy ```:
 
+```javascript
+this.state = {
+      cocktails: [],
+      searchTerm: '',
+      sortTerm: 'name|asc',
+      selectedOption: ''
+    }
+===========================
+  filterCocktails(){
+    const re = new RegExp(this.state.searchTerm, 'i')
+    const [field, order] = this.state.sortTerm.split('|')
 
-The overall solution to the movement mechanics of the aliens, using multiple arrays with relative positioning to the grid and applying / disapplying classes as appropriate, was arrived at after several other attempts using a single array and splicing elements from this. 
+    const filterCocktails = _.filter(this.state.cocktails, cocktail => {
+      return re.test(cocktail.strDrink)
+    })
+    const sortedCocktails = _.orderBy(filterCocktails, [field], [order])
 
-These other attempts led to a host of issues which required a rethink on the approach, and the deletion of significant amounts of code. While extremely frustrating at the time, this was a valuable lesson in not getting too attached to your code if it is not delivering the required functionality. . 
+    return sortedCocktails
+  }
+===========================
 
+<div className="field">
+  <input placeholder="Search your favourite drink" className="input" onKeyUp={this.handleKeyUp}/>
+</div>
+
+<label> Alphabetical Order:  </label>
+<select onChange={this.handleChange}>
+  <option value="strDrink|asc">A-Z </option>
+  <option value="strDrink|desc">Z-A </option>
+</select>
+```
 ### Styling
 
 My styling preferences lean strongly towards the simple application of strong bold, colours. With the 80s heritage of the original game, I chose to give the originally styling a twist with a neon theme and geometric imagery. The font used is [font], with a colour palette of [ colors linked in ]
