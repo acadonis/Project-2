@@ -13,7 +13,6 @@ The MVP requirements were that it:
 * Included both classical and functional components
 * Included a router with multiple pages
 * Had a design lead by wireframes produced prior to development of the app
-* Had semantically clean HTML 
 * Was deployable online
 
 ### Overview & concept of the project
@@ -26,7 +25,7 @@ Considering the purpose of the app, we considered an attractive and sylish desig
 
 ### Technologies used
 
-React, Insomnia, Bulma, HTML5, CSS 3, ES6, [SASS??], Git, Github
+React, axios, Insomnia, Bulma, HTML5, ES6, CSS 3, SASS, Git, Github
 
 ### Approach taken
 
@@ -34,25 +33,37 @@ Our first decision was to agree on pair-programming the app, given the limited t
 
 The our next stage involved setting up a Trello board with key tasks, followed by a UX wireframing session to work through and agree the design of the app.
 
-We quickly realised that the best design, given the purpose of the app to allow the user to search by ingredients, was an eyecatching homepage with a single search functionality (by ingredient). This would then lead the user to an index page where they would either have the option to browse the results of this initial search, or refine it further. 
+We quickly realised that the best design, given the purpose of the app to allow the user to search by ingredients, was an eyecatching homepage with a single search functionality (by ingredient). 
+
+This would then lead the user to an index page where they would either have the option to browse the results of this initial search, or refine it further, before a final show page with information on their cocktail of choice.
+
+![CocktailBored wireframe](./readme/wireframe.jpg)
+
+With the design agreed, we moved onto the technical implementation of the project. 
+
+Our underlying soltuion used axios to handle our requests, and the React setState method to render the DOM. Using a React component based structure, with both classical and functional components, allowed us to reuse components such as the Navbar where possible, and minimise duplication of code. 
+
+Using react-router allowed for a clearly structured app.js, with the url paths allowing navigation by way of the unique ingredient names or drink ids drawn from the API.  
 
 
+    <HashRouter>
+      <Navbar />
+      <Route path="/search/:spirit" component={CocktailsIndex} />
+    </HashRouter>
 
-The game appeared to lend itself to a grid based layout, and this was the initial approach I took. Once this concept was validated, I focused on the turret and firing mechanics to establish these early on, as I felt this could create a number of blockers due to multiple intervals and potential "run off" from the grid.
+    ===========================
 
-The turret and laster mechanics did not prove as difficult as expected, which then let to the core mechanics of the alien block movement. This proved far more challenging then I had presumed; especially once collision and bomb dropping were added while trying to maintain the overall cohesion of the alien's position on the grid and relative to each other. A particular challenge was to ensure that destroyed aliens did not continue to drop bombs, which was solved with the following code:
+    handleSubmit(){
+        this.props.history.push('/search/' + this.state.searchTerm)
 
-    function fireBomb() {
+    ===========================
 
-    const notHit = []
-
-    for(let i = 0;  i <= invadersPosition.length -1; i++){
-      if(!hitArray.includes(i)) notHit.push(i)
+    componentDidMount(){
+        axios.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + this.props.match.params.id)
+          .then(res => this.setState({ cocktail: res.data.drinks }))
     }
 
-    const randomIndex = notHit[Math.floor(Math.random() * notHit.length)]
 
-    let bombIndex = invadersPosition[randomIndex]
 
 The overall solution to the movement mechanics of the aliens, using multiple arrays with relative positioning to the grid and applying / disapplying classes as appropriate, was arrived at after several other attempts using a single array and splicing elements from this. 
 
