@@ -20,15 +20,23 @@ The MVP requirements were that it:
 
 The idea for CocktailBored was inspired by a shared love of cocktails, together with the age old problem of never having the right ingredients to hand for a particular receipe. 
 
-We decided to reverse the process by starting with the available ingredients rather than the name of the cocktail, and allowing 
+We decided to reverse the process by starting with the available ingredients rather than the name of the cocktail, and allowing the user to search by ingredients to narrow down their available options. 
+
+Considering the purpose of the app, we considered an attractive and sylish design to be essential, and made the decision to use Bulma to achieve this from the outset of the project. 
 
 ### Technologies used
 
-React, Insomnia, HTML5, CSS 3, ES6, [SASS], Git, Github
+React, Insomnia, Bulma, HTML5, CSS 3, ES6, [SASS??], Git, Github
 
 ### Approach taken
 
-My first step was to produce a Trello board with high level tasks, to be broken down at a later stage once I had identified the specific problems involved with each. 
+Our first decision was to agree on pair-programming the app, given the limited two day window and need to work closely together to agree functionality and design elements.
+
+The our next stage involved setting up a Trello board with key tasks, followed by a UX wireframing session to work through and agree the design of the app.
+
+We quickly realised that the best design, given the purpose of the app to allow the user to search by ingredients, was an eyecatching homepage with a single search functionality (by ingredient). This would then lead the user to an index page where they would either have the option to browse the results of this initial search, or refine it further. 
+
+
 
 The game appeared to lend itself to a grid based layout, and this was the initial approach I took. Once this concept was validated, I focused on the turret and firing mechanics to establish these early on, as I felt this could create a number of blockers due to multiple intervals and potential "run off" from the grid.
 
