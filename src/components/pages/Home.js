@@ -97,7 +97,7 @@ class Home extends React.Component {
         <footer className="footer">
           <div className="content has-text-centered">
             <p>
-              <strong>CocktailBored</strong> by <a href="https://jgthms.com">Alexis </a> and <a href="https://github.com/Iamshola">  Shola </a>
+              <strong>CocktailBored</strong> by <a href="https://github.com/acadonis">Alexis </a> and <a href="https://github.com/Iamshola">  Shola </a>
             </p>
           </div>
         </footer>
