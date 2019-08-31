@@ -98,18 +98,41 @@ this.state = {
   <option value="strDrink|desc">Z-A </option>
 </select>
 ```
+
+We also decided to prepopulate a number of searches and include these on the Navbar to allow the users to access a list of cocktails by a single click. 
+
 ### Styling
 
-My styling preferences lean strongly towards the simple application of strong bold, colours. With the 80s heritage of the original game, I chose to give the originally styling a twist with a neon theme and geometric imagery. The font used is [font], with a colour palette of [ colors linked in ]
+As part of our planning, we decided to implement a mobile-first design approach with responsive web design. Using Bulma allowed a relatively "out of the box" approach", but none the less additional customisation was required using a multiline columns approach with the card component. 
+
+We made a conscious decision not to clutter pages with two much information, instead preferring to limit the text on the screen and make use of large blocks of colour to give the site a spacious and relaxed feel. Given the prevalence of limited text on simple backgrounds, text and colour palette were key. 
+
+ The font used is [font], with a colour palette of [ colors linked in ]
+ 
+ We used Bulma variables and custom classes with SASS to tweak the underlying Bulma templates, but were conscious not to "fight" overly with the default Bulma settings:
+
+    @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+    $family-primary: 'Oswald';
+    $body-background-color: hsl(179, 3%, 90%);
+    $navbar-background-color: hsl(246, 46%, 90%);
+    $card-background-color: hsl(218, 17%, 21%);
+    $radius-large: 6px;
+
+
+    .card-content{
+      color:hsl(179, 3%, 90%);
+    }
+
+    .card{
+      border-radius: 10px;
+    }
+
+Overall I consider the styling to be effective, work well with the existing images being supplied by the API, and give the clean and uncluttered look we were aiming for. 
 
 ### Snippets of your code and screenshots of your project
 
-[Choose some code = turret firing mechanism]
 
-[another bit of code]
-
-
-![Space Invaders](./readme/spaceinvaders.gif)
 
 ### Wins and Blockers
 
