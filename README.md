@@ -45,24 +45,24 @@ Our underlying soltuion used axios to handle our requests, and the React setStat
 
 Using react-router allowed for a clearly structured app.js, with the url paths allowing navigation by way of the unique ingredient names or drink ids drawn from the API.  
 
+```javascript
+<HashRouter>
+  <Navbar />
+  <Route path="/search/:spirit" component={CocktailsIndex} />
+</HashRouter>
 
-    <HashRouter>
-      <Navbar />
-      <Route path="/search/:spirit" component={CocktailsIndex} />
-    </HashRouter>
+===========================
 
-    ===========================
+handleSubmit(){
+    this.props.history.push('/search/' + this.state.searchTerm)
 
-    handleSubmit(){
-        this.props.history.push('/search/' + this.state.searchTerm)
+===========================
 
-    ===========================
-
-    componentDidMount(){
-        axios.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + this.props.match.params.id)
-          .then(res => this.setState({ cocktail: res.data.drinks }))
-    }
-
+componentDidMount(){
+    axios.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + this.props.match.params.id)
+      .then(res => this.setState({ cocktail: res.data.drinks }))
+}
+```
 
 
 The overall solution to the movement mechanics of the aliens, using multiple arrays with relative positioning to the grid and applying / disapplying classes as appropriate, was arrived at after several other attempts using a single array and splicing elements from this. 
