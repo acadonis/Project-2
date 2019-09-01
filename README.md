@@ -29,7 +29,7 @@ React, axios, Insomnia, Bulma, HTML5, ES6, CSS 3, SASS, Git, Github
 
 ### Approach taken
 
-Our first decision was to agree on pair-programming the app, given the limited two day window and need to work closely together to agree functionality and design elements.
+Our first decision was to agree on pair-programming the app, working on a single laptop, given the limited two day window and need to work closely together to agree functionality and design elements. 
 
 We then reviewed the available public APIs that had information on cocktails available. After reviewing that it would fit with our ingredients led approach, we chose [TheCocktailDB](https://www.thecocktaildb.com/) due to it's large number of cocktails easily searchable by ingredients.
 
@@ -106,80 +106,63 @@ We also decided to prepopulate a number of searches and include these on the Nav
 As part of our planning, we decided to implement a mobile-first design approach with responsive web design. Using Bulma allowed a relatively "out of the box" approach", but none the less additional customisation was required using a multiline columns approach with the card component. 
 
 We made a conscious decision not to clutter pages with two much information, instead preferring to limit the text on the screen and make use of large blocks of colour to give the site a spacious and relaxed feel. Given the prevalence of limited text on simple backgrounds, text and colour palette were key. 
-
- The font used is [font], with a colour palette of [ colors linked in ]
  
  We used Bulma variables and custom classes with SASS to tweak the underlying Bulma templates, but were conscious not to "fight" overly with the default Bulma settings:
 
-    @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+```CSS 
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 
-    $family-primary: 'Oswald';
-    $body-background-color: hsl(179, 3%, 90%);
-    $navbar-background-color: hsl(246, 46%, 90%);
-    $card-background-color: hsl(218, 17%, 21%);
-    $radius-large: 6px;
+$family-primary: 'Oswald';
+$body-background-color: hsl(179, 3%, 90%);
+$navbar-background-color: hsl(246, 46%, 90%);
+$card-background-color: hsl(218, 17%, 21%);
+$radius-large: 6px;
 
 
-    .card-content{
-      color:hsl(179, 3%, 90%);
-    }
+.card-content{
+  color:hsl(179, 3%, 90%);
+}
 
-    .card{
-      border-radius: 10px;
-    }
+.card{
+  border-radius: 10px;
+}
+```
+Overall I consider the styling effective, working well with the existing images being supplied by the API, and giving the clean and uncluttered look we were aiming for:
 
-Overall I consider the styling to be effective, work well with the existing images being supplied by the API, and give the clean and uncluttered look we were aiming for. 
 
-### Snippets of your code and screenshots of your project
 
 
 
 ### Wins and Blockers
 
 #### Wins:
-* An effective system for managing the alien block which maintains it's coherence and allows for all the required collision and firing mechanics. 
+* The search functionality works as intended, allowing the user a simple and effective way of searching for cocktails to make.
 
-* The firing of multiple instances of the turret laser.
+* Prior research on the API meant that the information available through requests was that required by the app.
 
-* A simple but striking design which pays homage to the original but has it's own personality. 
+* Strong design which puts the product at the heart of the user experience.
 
-* A game which meets the MVP and my original requirement for a fast paced, reaction dependant experience.
+* Succinct and well structured code throughout.
 
 #### Blockers:
-* Currently only one bomb can be displayed on screen at any one time. This is despite the bomb drop code having the same underlying principles as turret firing, which can handle multiple instances of a turret laser on screen. 
-
-* It seems probable that this is an interval issue which has crept in due to the different bomb firing mechanism (automatic firing on a per ms basis) versus a keypress for the turret.
-
-* Keypress speed for the turret movement and firing also needs to be slowed, which has proven more challenging than anticipated.
-
-* An early attempt to have a scalable grid, based on the width variable, was a red herring which consumed too much time when MVP had still not been met. 
-
-* Destroying all the aliens or the turret being hit by a bomb does not fully stop the game code; this and a reset function to play again have proved challenging. 
+* Each pre-populated search on the nav bar has it's own component, when ideally a single component would be used to load each search, with the ingredient passed in as a variable depending on the link clicked. I sucessfully tackled a more advanced version of this issue in Project 3 - Happenings, which is detailed in the project readme.
 
 ### Future features
 
-"Top n tail" the core game with:
-
-* Start screen
-* Reset button which is not a hard refresh
-* High score table
-* Game over screen
-
-To achieve the above, a refactoring exercise on the existing code needs to be undertaken, especially pulling out nested functions and ensuring these are only being called when required. 
-
+* Introduce the ability to search by multiple ingredients 
+* A comparison function to compare cocktails
+* Making the prepopulated searches use a single component. 
 
 ### Learning points (tech & soft skills)
 
 #### Methodology
-The importance of reaching MVP, and testing MVP thoroughly at that point to make sure the principles behind the code work  before proceeding to more complex elements was my principal learning point from this project. 
+The experience of working with a colleague pair programming was invaluable. Having a second person to come up with ideas, suggest alternatives, and check code as it is typed saves time and leads to a more rounded product. 
 
-Having spent several days development more advanced features without reaching MVP, when I hit blockers on MVP elements this was complicated by having complex code already written in other areas. 
-
-I also was reminded of the importance of building code one step at a time, and not trying to make large jumps before testing. If you cannot see a way of incrementally adding features in a controlled manner rather than writing everything at one, your code is probably not as optimised as it could be.
-
-In line with this, my Trello board usage was not as disciplined as it could have been, and having a clear picture of what tasks were outstanding and their importance would have been a clear benefit, and is something I have implemented subequent to this project. 
+The hackathon format of the project meant that all time had to be used productively, and it was an interesting exercise to  balance when to start the technical development versus conducting sufficient preparation. I am happy that we struck this balance relatively well for our first such project. 
 
 #### Technical
-The project developed my technical skills in every area of the technologies used. In Javascript, I became more comfortable with the use of arrays, functions and structuring variables to avoid scoping issues. Avoiding coding "soup" and functions become too unwieldy was also something I was mindful of, with a degree of success.
+This project honed my skills with React, and advanced my understanding of the React set lifeycycle greatly. Understanding when render is called and React reconciliation overall I found key to this, combined with ensuring that all information to be displayed to the user is set by setState, and state is never modified directly. 
 
-The use of SASS for the CSS styling increased my knowledge of this useful tool, and practice with flexbox in CSS meant the layout of the game was a relativey straightforward. 
+It also increased my knowledge of APIs, both in terms of using axios to retrieve information, and in researching the capabilities (and importantly) limitations of APIs prior to deciding to use them through their documentation. 
+
+
