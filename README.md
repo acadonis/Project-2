@@ -88,7 +88,9 @@ this.state = {
       sortTerm: 'name|asc',
       selectedOption: ''
     }
+    
 ===========================
+  
   filterCocktails(){
     const re = new RegExp(this.state.searchTerm, 'i')
     const [field, order] = this.state.sortTerm.split('|')
@@ -100,6 +102,7 @@ this.state = {
 
     return sortedCocktails
   }
+  
 ===========================
 
 <div className="field">
