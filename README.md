@@ -4,6 +4,16 @@
 
 [CocktailBored](https://acadonis.github.io/Project-2/#/)
 
+### Installation
+
+Fork the repository
+
+Clone the repository down to your local system
+
+Run **npm i** in the terminal to install dependencies
+
+Run **npm run serve** in the terminal to load the app
+
 ### Brief
 
 Over a two day "Reacathon", my colleague and I were tasked with building a React appliction which consumed a public API. 
@@ -15,6 +25,10 @@ The MVP requirements were that it:
 * Had a design lead by wireframes produced prior to development of the app
 * Was deployable online
 
+### Timeframe
+
+Two days
+
 ### Overview & concept of the project
 
 The idea for CocktailBored was inspired by a shared love of cocktails, together with the age old problem of never having the right ingredients to hand for a particular receipe. 
@@ -25,7 +39,7 @@ Considering the purpose of the app, we considered an attractive and sylish desig
 
 ### Technologies used
 
-React, axios, Insomnia, Bulma, HTML5, ES6, CSS 3, SASS, Git, Github
+React, Javascript ES6, axios, Insomnia, Bulma, HTML5, CSS 3, SASS, Git, Github
 
 ### Approach taken
 
@@ -99,7 +113,7 @@ this.state = {
 </select>
 ```
 
-We also decided to prepopulate a number of searches and include these on the Navbar to allow the users to access a list of cocktails by a single click. 
+We also decided to pre-populate a number of searches and include these on the Navbar to allow the users to access a list of cocktails by a single click. 
 
 ### Styling
 
@@ -129,10 +143,6 @@ $radius-large: 6px;
 ```
 Overall I consider the styling effective, working well with the existing images being supplied by the API, and giving the clean and uncluttered look we were aiming for:
 
-
-
-
-
 ### Wins and Blockers
 
 #### Wins:
@@ -145,7 +155,11 @@ Overall I consider the styling effective, working well with the existing images 
 * Succinct and well structured code throughout.
 
 #### Blockers:
-* Each pre-populated search on the nav bar has it's own component, when ideally a single component would be used to load each search, with the ingredient passed in as a variable depending on the link clicked. I sucessfully tackled a more advanced version of this issue in Project 3 - Happenings, which is detailed in the project readme.
+* Each pre-populated search on the nav bar has it's own component, when ideally a single component would be used to load each search, with the ingredient passed in as a variable depending on the link clicked. 
+
+* I sucessfully tackled a more advanced version of this issue in Project 3 - Happenings, which is detailed in the project readme.
+
+* The site is responsive but we strayed slightly from the mobile-first design approach. This again was tackled in Project 4, where the design approach was truly mobile-first.
 
 ### Future features
 
