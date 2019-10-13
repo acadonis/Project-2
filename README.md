@@ -18,7 +18,7 @@ Run **npm run serve** in the terminal to load the app
 
 ### Brief
 
-Over a two day "Reacathon", my colleague and I were tasked with building a React appliction which consumed a public API. 
+Over a two day "Reacathon", my colleague and I were tasked with building a React application which consumed a public API. 
 
 The MVP requirements were that it:
 
@@ -33,7 +33,7 @@ Two days
 
 ### Overview & concept of the project
 
-The idea for CocktailBored was inspired by a shared love of cocktails, together with the age old problem of never having the right ingredients to hand for a particular receipe. 
+The idea for CocktailBored was inspired by a shared love of cocktails, together with the age old problem of never having the right ingredients to hand for a particular recipe. 
 
 We decided to reverse the process by starting with the available ingredients rather than the name of the cocktail, and allowing the user to search by ingredients to narrow down their available options. 
 
@@ -47,7 +47,7 @@ React, Javascript ES6, axios, Insomnia, Bulma, HTML5, CSS 3, SASS, Git, Github
 
 Our first decision was to agree on pair-programming the app, working on a single laptop, given the limited two day window and need to work closely together to agree functionality and design elements. 
 
-We then reviewed the available public APIs that had information on cocktails available. After reviewing that it would fit with our ingredients led approach, we chose [TheCocktailDB](https://www.thecocktaildb.com/) due to it's large number of cocktails easily searchable by ingredients.
+We then reviewed the available public APIs that had information on cocktails available. After reviewing that it would fit with our ingredients led approach, we chose [TheCocktailDB](https://www.thecocktaildb.com/) due to its large number of cocktails easily searchable by ingredients.
 
 Our next stage involved setting up a Trello board with key tasks, followed by a UX wireframing session to work through and agree the design of the app.
 
@@ -59,7 +59,7 @@ This would then lead the user to an index page where they would either have the 
 
 With the design agreed, we moved onto the technical implementation of the project. 
 
-Our underlying soltuion used axios to handle our requests, and the React setState method to render the DOM. Using a React component based structure, with both classical and functional components, allowed us to reuse components such as the Navbar where possible, and minimise duplication of code. 
+Our underlying solution used axios to handle our requests, and the React setState method to render the DOM. Using a React component based structure, with both classical and functional components, allowed us to reuse components such as the Navbar where possible, and minimise duplication of code. 
 
 Using react-router allowed for a clearly structured app.js, with the url paths allowing navigation by way of the unique ingredient names or drink ids drawn from the API. For example, the ingredients search routing from the main page follows the below routing:
 
@@ -162,7 +162,7 @@ Overall I consider the styling effective, working well with the existing images 
 #### Blockers:
 * Each pre-populated search on the nav bar has it's own component, when ideally a single component would be used to load each search, with the ingredient passed in as a variable depending on the link clicked. 
 
-* I sucessfully tackled a more advanced version of this issue in Project 3 - Happenings, which is detailed in the project readme.
+* I successfully tackled a more advanced version of this issue in Project 3 - Happenings, which is detailed in the project readme.
 
 * The site is responsive but we strayed slightly from the mobile-first design approach. This again was tackled in Project 4, where the design approach was truly mobile-first.
 
@@ -180,7 +180,7 @@ The experience of working with a colleague pair programming was invaluable. Havi
 The hackathon format of the project meant that all time had to be used productively, and it was an interesting exercise to  balance when to start the technical development versus conducting sufficient preparation. I am happy that we struck this balance relatively well for our first such project. 
 
 #### Technical
-This project honed my skills with React, and advanced my understanding of the React lifeycycle greatly. Understanding when render is called and React reconciliation overall I found key to this, combined with ensuring that all information to be displayed to the user is set by setState, and state is never modified directly. 
+This project honed my skills with React, and advanced my understanding of the React lifecycle greatly. Understanding when render is called and React reconciliation overall I found key to this, combined with ensuring that all information to be displayed to the user is set by setState, and state is never modified directly. 
 
 It also increased my knowledge of APIs, both in terms of using axios to retrieve information, and in researching the capabilities (and importantly) limitations of APIs prior to deciding to use them through their documentation. 
 
