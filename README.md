@@ -1,5 +1,7 @@
 # GA Project 2: CocktailBored 
 
+<img src="./readme/cocktailbored.jpg" width="100%" alt="CocktailBored wireframe">
+
 ### Link
 
 [CocktailBored](https://acadonis.github.io/Project-2/#/)
