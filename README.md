@@ -172,7 +172,7 @@ Overall I consider the styling effective, working well with the existing images 
 * A comparison function to compare cocktails
 * Making the prepopulated searches use a single component. 
 
-### Learning points (tech & soft skills)
+### Learning points
 
 #### Methodology
 The experience of working with a colleague pair programming was invaluable. Having a second person to come up with ideas, suggest alternatives, and check code as it is typed saves time and leads to a more rounded product. 
@@ -180,7 +180,7 @@ The experience of working with a colleague pair programming was invaluable. Havi
 The hackathon format of the project meant that all time had to be used productively, and it was an interesting exercise to  balance when to start the technical development versus conducting sufficient preparation. I am happy that we struck this balance relatively well for our first such project. 
 
 #### Technical
-This project honed my skills with React, and advanced my understanding of the React set lifeycycle greatly. Understanding when render is called and React reconciliation overall I found key to this, combined with ensuring that all information to be displayed to the user is set by setState, and state is never modified directly. 
+This project honed my skills with React, and advanced my understanding of the React lifeycycle greatly. Understanding when render is called and React reconciliation overall I found key to this, combined with ensuring that all information to be displayed to the user is set by setState, and state is never modified directly. 
 
 It also increased my knowledge of APIs, both in terms of using axios to retrieve information, and in researching the capabilities (and importantly) limitations of APIs prior to deciding to use them through their documentation. 
 
